@@ -14,4 +14,9 @@ pip install d2l==0.17.0<br>
 &middot; Prepare the PCAP packets and segment the PCAP traffic into 5-tuple sessions.<br>
 &middot; Run dataset_gen.py to generate the required temporal features and context features.<br>
 &middot; The models.py file contains six components of the model, i.e., the Temporal Encoder, the Temporal Decoder, the Contextual Encoder, the Contextual Decoder, the Fusion Encoder and the Fusion Decoder.<br>
-run dataset_gen.py first,then run train_test.py
+&middot; Run the train_test.py file to train the model and output the test results.<br>
+# References
+&middot; Realtime Robust Malicious Traffic Detection via Frequency Domain Analysis, Chuanpu Fu, Qi Li, Meng Shen, Ke Xu - CCS 2021.<br>
+&middot; Detecting Unknown Encrypted Malicious Traffic in Real Time via Flow Interaction Graph Analysis, Chuanpu Fu, Qi Li, Ke Xu - NDSS 2023.<br>
+&middot; Trident: A universal framework for fine-grained and class-incremental unknown traffic detection, Zhao Z, Li Z, Song Z - Proceedings of the ACM Web Conference 2024.<br>
+&middot; Towards context-aware traffic classification via time-wavelet fusion network, Zhao Z, Song Z, Xie X - Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining 2025.
