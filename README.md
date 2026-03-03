@@ -17,6 +17,9 @@ pip install d2l==0.17.0<br>
 &middot; Run the train_test.py file to train the model and output the test results.<br>
 # References
 &middot; Realtime Robust Malicious Traffic Detection via Frequency Domain Analysis, Chuanpu Fu, Qi Li, Meng Shen, Ke Xu - CCS 2021.<br>
+&middot; New Directions in Automated Traffic Analysis, Jordan Holland, Paul Schmitt, Nick Feamster, Prateek Mittal - CCS 2021.<br>
+&middot; ET-BERT: A Contextualized Datagram Representation with Pre-training Transformers for Encrypted Traffic Classification, Xinjie Lin, Gang Xiong, Gaopeng Gou, Zhen Li, Junzheng Shi, Jing Yu - WWW 2022.<br>
+&middot; FlowPrint: Semi-Supervised Mobile-App Fingerprinting on Encrypted Network Traffic, Thijs van Ede, Riccardo Bortolameotti, Andrea Continella, Jingjing Ren, Daniel J. Dubois, Martina Lindorfer, David Choffnes, Maarten van Steen, Andreas Peter - NDSS 2020.<br>
 &middot; Detecting Unknown Encrypted Malicious Traffic in Real Time via Flow Interaction Graph Analysis, Chuanpu Fu, Qi Li, Ke Xu - NDSS 2023.<br>
 &middot; Trident: A universal framework for fine-grained and class-incremental unknown traffic detection, Zhao Z, Li Z, Song Z - Proceedings of the ACM Web Conference 2024.<br>
 &middot; Towards context-aware traffic classification via time-wavelet fusion network, Zhao Z, Song Z, Xie X - Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining 2025.
