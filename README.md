@@ -12,4 +12,6 @@ pip install torch<br>
 pip install d2l==0.17.0<br>
 # How to Use
 &middot; Prepare the PCAP packets and segment the PCAP traffic into 5-tuple sessions.<br>
+&middot; Run dataset_gen.py to generate the required temporal features and context features.<br>
+&middot; The models.py file contains six components of the model, i.e., the Temporal Encoder, the Temporal Decoder, the Contextual Encoder, the Contextual Decoder, the Fusion Encoder and the Fusion Decoder.<br>
 run dataset_gen.py first,then run train_test.py
