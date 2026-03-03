@@ -1,1 +1,1 @@
-# bident  run dataset_gen.py first,then runtrain_test.py
+# bident  run dataset_gen.py first,then run train_test.py
