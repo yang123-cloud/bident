@@ -10,5 +10,6 @@ pip install matplotlib<br>
 pip install sklearn<br>
 pip install torch<br>
 pip install d2l==0.17.0<br>
-
+# How to Use
+&middot; Prepare the PCAP packets and segment the PCAP traffic into 5-tuple sessions.<br>
 run dataset_gen.py first,then run train_test.py
