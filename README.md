@@ -5,7 +5,7 @@
 The overall framework is illustrated below.
 
 <!-- Replace this placeholder with your framework figure -->
-<!-- ![Traffic-Diff Architecture](overview.png) -->
+![Bident Architecture](overview.png) 
 
 ## How it works
 
