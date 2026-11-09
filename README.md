@@ -138,19 +138,6 @@ Everything is a command-line flag of `run`; `config.py` is the full list. The re
 | `--cache` | – | `.npz` file that caches the parsed flows between runs |
 | `--use_mamba_ssm` | off | use the CUDA `mamba_ssm` kernel |
 
-## Differences from the paper
-
-The paper leaves some details open and I made these choices. They are the first places to look if results differ.
-
-1. **Context window.** The paper says the contextual subgraph uses only earlier flows but not how it is built. Here: the target flow plus the previous `n_ctx−1` flows of the same pcap, ordered by start time.
-2. **Anti-collapse.** FRL reconstructs Z_t and Z_c, which are themselves trained, so the objective can be minimised by collapsing them. I detach the reconstruction targets and add a light anchor loss that keeps Z_t / Z_c able to recover the raw bytes / packet features. `--anchor_w 0` removes the anchor (the detach stays).
-3. **Single-class learner.** The text says two independent AutoEncoders; Fig. 4 draws a fusion block between encoder and decoder. I implemented the text: two independent AEs on Z_t and Z_c. The fused E_f shapes Z_t / Z_c through FRL training and is the DBSCAN descriptor.
-4. **DAT floor.** If BIC picks one component, μ − 2σ rejects most of the class's own training samples (on a synthetic unimodal loss it accepted only 1.2 %). The threshold is therefore also kept above the 90th percentile of the training losses. `--thr_floor_q 0` is Eq. 29 exactly.
-5. **SSM.** A unidirectional selective scan written in pure PyTorch (sequence length N_s = 1024 by default, gradient-checkpointed per chunk). It is slow; use a GPU, reduce `--n_pkt`/`--pkt_len`, or use `mamba_ssm`.
-6. **DBSCAN.** The paper does not give eps; it is estimated automatically and descriptors are standardised first. Clusters smaller than `--min_cluster` do not become a learner.
-7. **Single run.** One invocation = one seed; the paper's three-run average is the loop above.
-8. **Not implemented:** baselines, ROC/AUC and FPR, the robustness / cross-dataset / drift experiments, and dataset download or preprocessing for IDS2017&2018, CrossNet2021, USTC-TFC2016, ISCXVPN2016.
-
 ## Testing status
 
 - **Tested** on synthetic pcaps (5 classes): pcap parsing, flow assembly, causal context windows, address masking, cache round trip, DAT thresholds, dual verification, DBSCAN discovery with Hungarian-matched evaluation, and the buffer / incremental-learning bookkeeping (the last one with the network replaced by an oracle).
