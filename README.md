@@ -97,12 +97,12 @@ done
 
 Following the paper's evaluation protocol:
 
-1. Parse every pcap into flows and split each class into train / test (`--test_ratio`, default 0.3).
-2. Only `--n_known` classes (paper: 1) are known; all others are withheld from training and treated as unknown.
+1. Parse every pcap into flows and split each class into train / test (`--test_ratio`).
+2. Only `--n_known` classes are known; all others are withheld from training and treated as unknown.
 3. Train STR + CAR + FRL on the known classes with the fusion-reconstruction loss, then freeze them.
 4. Train one (temporal AE, contextual AE) learner per known class and fit its two DAT thresholds.
-5. Stream the test flows of **all** classes in random order through dual verification; rejected flows go to the buffer; whenever it holds `--buffer` flows, DBSCAN on the fused descriptors creates new learners.
-6. Match discovered clusters to the true unknown classes with the Hungarian algorithm and score.
+5. Stream the test flows of **all** classes through dual verification; rejected flows go to the buffer; whenever it holds `--buffer` flows, DBSCAN on the fused descriptors creates new learners.
+6. Match discovered clusters to the true unknown classes with the Hungarian algorithm.
 
 ### Outputs (`--out_dir`)
 
