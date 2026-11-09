@@ -59,7 +59,7 @@ pcaps/
 
 - Accepted extensions: `.pcap`, `.pcapng`, `.cap`. Class names must be unique.
 - Link types: Ethernet (with VLAN tags), raw IP, Linux cooked v1/v2, BSD loopback; IPv4 and IPv6.
-- A **flow** is a bidirectional 5-tuple, closed after `--idle_timeout` seconds (default 120) of silence; flows with fewer than `--min_pkts` packets are dropped. At most `--max_flows` flows (earliest first) are read from each pcap.
+- A **flow** is a bidirectional 5-tuple, closed after `--idle_timeout` seconds of silence; flows with fewer than `--min_pkts` packets are dropped. At most `--max_flows` flows (earliest first) are read from each pcap.
 - Per flow: the first `n_pkt` packets × `pkt_len` bytes from the IP header on (→ STR), and for the first `m` packets the signed length and log inter-arrival time (→ CAR).
 - By default IP addresses, transport ports and the IPv4 checksum are zeroed (`--no-mask_addr` to keep them) so the model cannot shortcut on addresses.
 - **Context window** of a flow = itself plus the `n_ctx−1` flows that started before it in the *same pcap*. It is strictly causal — no future flow is ever used.
