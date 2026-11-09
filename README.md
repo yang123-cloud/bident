@@ -1,12 +1,11 @@
 # Bident
 
-**An unofficial PyTorch re-implementation of _"Bident: Towards the Detection of Stealthy Unknown Traffic with Time-Context Fusion"_** (Zhibo Yang, Ziqi Yang, Yang Xiao, Fan Zhang).
+**"Bident: Towards the Detection of Stealthy Unknown Traffic with Time-Context Fusion"** (Zhibo Yang, Ziqi Yang, Yang Xiao, Fan Zhang).
 
-English | [简体中文](README_zh.md)
+The overall framework is illustrated below.
 
-Point it at a folder of `.pcap` files — **one file per traffic class, the file name is the class name** — and it trains a class-decoupled open-set detector, flags traffic that matches no known class, groups the rejected flows into new classes, and reports fine-grained unknown-traffic metrics.
-
-> This repository is not affiliated with the authors. The paper points to its own code at <https://github.com/yang123-cloud/bident>; this project was written from the paper text alone. Please read [Testing status](#testing-status) and [Differences from the paper](#differences-from-the-paper) before relying on any number it produces.
+<!-- Replace this placeholder with your framework figure -->
+<!-- ![Traffic-Diff Architecture](overview.png) -->
 
 ## How it works
 
