@@ -138,15 +138,9 @@ Everything is a command-line flag of `run`; `config.py` is the full list. The re
 | `--cache` | – | `.npz` file that caches the parsed flows between runs |
 | `--use_mamba_ssm` | off | use the CUDA `mamba_ssm` kernel |
 
-## Testing status
-
-- **Tested** on synthetic pcaps (5 classes): pcap parsing, flow assembly, causal context windows, address masking, cache round trip, DAT thresholds, dual verification, DBSCAN discovery with Hungarian-matched evaluation, and the buffer / incremental-learning bookkeeping (the last one with the network replaced by an oracle).
-- **Not tested:** the PyTorch code (`model.py`, and the training / inference parts of `detector.py` and `run_bident.py`) was only syntax-checked, because the machine it was written on had no PyTorch. Expect that a first run may surface shape or dtype bugs — please open an issue.
-- No attempt has been made to reproduce the paper's numbers.
-
 ## Citation
 
-If you use the method, cite the paper (fill in the final venue and year):
+If you use the method, cite the paper:
 
 ```bibtex
 @misc{yang2026bident,
