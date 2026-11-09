@@ -138,18 +138,6 @@ Everything is a command-line flag of `run`; `config.py` is the full list. The re
 | `--cache` | – | `.npz` file that caches the parsed flows between runs |
 | `--use_mamba_ssm` | off | use the CUDA `mamba_ssm` kernel |
 
-## Paper ↔ code
-
-| paper | where |
-|---|---|
-| STR: stride cutting Eq. 1–3, selective SSM Eq. 4–9 | `model.py` — `STR`, `SSMBlock` |
-| CAR: multi-instance packet attention Eq. 10–13, inter-session attention Eq. 14 | `model.py` — `CAR` |
-| FRL: cross-attention fusion Eq. 15–18, dual reconstruction Eq. 19–25 | `model.py` — `FRL`, `BidentEncoder` |
-| single-class learner: two FC AutoEncoders with ReLU (Fig. 4) | `model.py` — `SingleClassLearner` |
-| DAT: GMM + BIC, component with the largest mean, Eq. 26–29 | `dat.py` — `fit_dat_threshold` |
-| dual verification, Algorithm 1 | `dat.py` — `dual_verify` |
-| buffer, DBSCAN on Pool(E_f), incremental learning, Hungarian matching | `detector.py` — `run_stream`; `dat.py` |
-
 ## Differences from the paper
 
 The paper leaves some details open and I made these choices. They are the first places to look if results differ.
