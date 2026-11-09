@@ -127,7 +127,7 @@ Everything is a command-line flag of `run`; `config.py` is the full list. The re
 | `--k_max` / `--gmm_iter` / `--alpha` | 7 / 100 / 2 | max GMM components / GMM iterations / threshold strictness |
 | `--buffer` | 100 | buffer size N_B that triggers DBSCAN |
 | `--batch_size` / `--epochs` / `--lr` / `--dropout` | 64 / 30 / 1e-4 / 0.2 | shared-representation training |
-| `--d_f` | 128 | fused dimension (not given in the paper) |
+| `--d_f` | 128 | fused dimension |
 | `--anchor_w` | 1.0 | weight of the anti-collapse anchor loss; `0` = paper-literal |
 | `--thr_floor_q` | 0.9 | DAT threshold is at least this quantile of the training losses; `0` = paper-literal |
 | `--eps` / `--min_samples` / `--min_cluster` | 0 (auto) / 5 / 10 | DBSCAN eps (0 = 90th percentile of the k-NN distance), its `min_samples`, smallest cluster that becomes a learner |
