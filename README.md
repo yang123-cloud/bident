@@ -128,13 +128,13 @@ Everything is a command-line flag of `run`; `config.py` is the full list. The re
 | `--buffer` | 100 | buffer size N_B that triggers DBSCAN |
 | `--batch_size` / `--epochs` / `--lr` / `--dropout` | 64 / 30 / 1e-4 / 0.2 | shared-representation training |
 | `--d_f` | 128 | fused dimension |
-| `--anchor_w` | 1.0 | weight of the anti-collapse anchor loss; `0` = paper-literal |
-| `--thr_floor_q` | 0.9 | DAT threshold is at least this quantile of the training losses; `0` = paper-literal |
+| `--anchor_w` | 1.0 | weight of the anti-collapse anchor loss |
+| `--thr_floor_q` | 0.9 | DAT threshold is at least this quantile of the training losses |
 | `--eps` / `--min_samples` / `--min_cluster` | 0 (auto) / 5 / 10 | DBSCAN eps (0 = 90th percentile of the k-NN distance), its `min_samples`, smallest cluster that becomes a learner |
 | `--ae_epochs` / `--ae_lr` / `--ae_min_steps` / `--ae_max_samples` | 30 / 1e-3 / 300 / 1500 | training of each single-class learner |
 | `--known` / `--n_known` | "" / 1 | comma-separated known class names, or how many random classes are known |
 | `--test_ratio` / `--seed` / `--device` | 0.3 / 0 / auto | split, seed, `cuda`/`cpu` |
-| `--idle_timeout` / `--max_flows` / `--min_pkts` / `--mask_addr` | 120 / 2000 / 2 / on | flow assembly (see Input data) |
+| `--idle_timeout` / `--max_flows` / `--min_pkts` / `--mask_addr` | 120 / 2000 / 2 / on | flow assembly |
 | `--cache` | – | `.npz` file that caches the parsed flows between runs |
 | `--use_mamba_ssm` | off | use the CUDA `mamba_ssm` kernel |
 
