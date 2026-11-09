@@ -116,17 +116,17 @@ Following the paper's evaluation protocol:
 
 ## Options
 
-Everything is a command-line flag of `run`; `config.py` is the full list. Defaults marked **paper** are Table III; the rest are implementation choices (see below).
+Everything is a command-line flag of `run`; `config.py` is the full list. The rest are implementation choices (see below).
 
 | flag | default | meaning |
 |---|---|---|
-| `--n_pkt` / `--pkt_len` / `--stride` | 64 / 128 / 8 | **paper** N_p / L_p / L_s (stride must divide pkt_len) |
-| `--d` | 256 | **paper** SSM hidden size (= d_t) |
-| `--m` / `--d_c` / `--n_ctx` | 10 / 128 / 64 | **paper** packets per session / CAR size / sessions in the context window |
-| `--h` | 128 | **paper** AutoEncoder hidden size |
-| `--k_max` / `--gmm_iter` / `--alpha` | 7 / 100 / 2 | **paper** max GMM components / GMM iterations / threshold strictness |
-| `--buffer` | 100 | **paper** buffer size N_B that triggers DBSCAN |
-| `--batch_size` / `--epochs` / `--lr` / `--dropout` | 64 / 30 / 1e-4 / 0.2 | **paper** shared-representation training |
+| `--n_pkt` / `--pkt_len` / `--stride` | 64 / 128 / 8 | N_p / L_p / L_s (stride must divide pkt_len) |
+| `--d` | 256 | SSM hidden size (= d_t) |
+| `--m` / `--d_c` / `--n_ctx` | 10 / 128 / 64 | packets per session / CAR size / sessions in the context window |
+| `--h` | 128 | AutoEncoder hidden size |
+| `--k_max` / `--gmm_iter` / `--alpha` | 7 / 100 / 2 | max GMM components / GMM iterations / threshold strictness |
+| `--buffer` | 100 | buffer size N_B that triggers DBSCAN |
+| `--batch_size` / `--epochs` / `--lr` / `--dropout` | 64 / 30 / 1e-4 / 0.2 | shared-representation training |
 | `--d_f` | 128 | fused dimension (not given in the paper) |
 | `--anchor_w` | 1.0 | weight of the anti-collapse anchor loss; `0` = paper-literal |
 | `--thr_floor_q` | 0.9 | DAT threshold is at least this quantile of the training losses; `0` = paper-literal |
